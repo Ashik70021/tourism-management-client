@@ -9,6 +9,12 @@ import {
 
 import Home from './Component/Home';
 import Root from './Component/Root';
+import AllTouristSpot from './Component/AllTouristSpot';
+import AddTouristSpot from './Component/AddTouristSpot';
+import MyList from './Component/MyList';
+import AuthProvider from './Component/AuthProvider';
+import Signin from './Component/Signin';
+import Signup from './Component/Signup';
 
 const router = createBrowserRouter([
   {
@@ -19,12 +25,34 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      {
+        path: "/allTouristSpot",
+        element: <AllTouristSpot></AllTouristSpot>,
+      },
+      {
+        path: "/AddTouristSpot",
+        element: <AddTouristSpot></AddTouristSpot>,
+      },
+      {
+        path: "/myList",
+        element: <MyList></MyList>,
+      },
+      {
+        path: "/signin",
+        element: <Signin></Signin>,
+      },
+      {
+        path: "/signup",
+        element: <Signup></Signup>,
+      },
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
