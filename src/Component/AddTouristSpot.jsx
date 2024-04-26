@@ -26,63 +26,65 @@ const AddTouristSpot = () => {
         }
         fetch("http://localhost:5000/AddTouristSpot", {
             method: "POST",
-            headers:{
-                "content-type":"application/json"
+            headers: {
+                "content-type": "application/json"
             },
             body: JSON.stringify(info)
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data?.insertedId){
-                alert("Place added successfully")
+            .then(res => res.json())
+            .then(data => {
+                if (data?.insertedId) {
+                    alert("Place added successfully")
+                }
             }
-        } 
-            
-        )
-        
+
+            )
+
     }
     return (
         <div className="container mx-auto">
-            <h1 className="text-center text-4xl font-bold"> Add Tourist Spot</h1>
-            <form onSubmit={handleAddSpot}>
-                <div className="grid grid-cols-2 p-4">
-                    <div className="p-6">
-                        <label className="text-xl font-normal" htmlFor="">Country Name</label>
-                        <input type="text" placeholder="Type here" name="country_Name" className="input input-bordered w-full " />
+            <div className="">
+                <h1 className="text-center text-4xl font-bold"> Add Tourist Spot</h1>
+                <form className="mt-32" onSubmit={handleAddSpot}>
+                    <div className="grid grid-cols-2 p-4">
+                        <div className="p-6">
+                            <label className="text-xl font-normal" htmlFor="">Country Name</label>
+                            <input type="text" placeholder="Type here" name="country_Name" className="input input-bordered w-full " />
+                        </div>
+                        <div className="p-6">
+                            <label className="text-xl font-normal" htmlFor="">Tourists spot name</label>
+                            <input type="text" placeholder="Type here" name="tourists_spot_name" className="input input-bordered w-full " />
+                        </div>
+                        <div className="p-6">
+                            <label className="text-xl font-normal" htmlFor="">Image</label>
+                            <input type="text" placeholder="Use image URL" name="image" className="input input-bordered w-full " />
+                        </div>
+                        <div className="p-6">
+                            <label className="text-xl font-normal" htmlFor="">Location</label>
+                            <input type="text" placeholder="Type here" name="location" className="input input-bordered w-full " />
+                        </div>
+                        <div className="p-6">
+                            <label className="text-xl font-normal" htmlFor="">Short description</label>
+                            <input type="text" placeholder="Type here" name="short_description" className="input input-bordered w-full " />
+                        </div>
+                        <div className="p-6">
+                            <label className="text-xl font-normal" htmlFor="">Average cost</label>
+                            <input type="text" placeholder="Type here" name="average_cost" className="input input-bordered w-full " />
+                        </div>
+                        <div className="p-6">
+                            <label className="text-xl font-normal" htmlFor="">Seasonality</label>
+                            <input type="text" placeholder="Type here" name="seasonality" className="input input-bordered w-full " />
+                        </div>
+                        <div className="p-6">
+                            <label className="text-xl font-normal" htmlFor="">Total Visitors Per Year</label>
+                            <input type="text" placeholder="Type here" name="totalVisitorsPerYear" className="input input-bordered w-full " />
+                        </div>
                     </div>
-                    <div className="p-6">
-                        <label className="text-xl font-normal" htmlFor="">Tourists spot name</label>
-                        <input type="text" placeholder="Type here" name="tourists_spot_name" className="input input-bordered w-full " />
-                    </div>
-                    <div className="p-6">
-                        <label className="text-xl font-normal" htmlFor="">Image</label>
-                        <input type="text" placeholder="Use image URL" name="image" className="input input-bordered w-full " />
-                    </div>
-                    <div className="p-6">
-                        <label className="text-xl font-normal" htmlFor="">Location</label>
-                        <input type="text" placeholder="Type here" name="location" className="input input-bordered w-full " />
-                    </div>
-                    <div className="p-6">
-                        <label className="text-xl font-normal" htmlFor="">Short description</label>
-                        <input type="text" placeholder="Type here" name="short_description" className="input input-bordered w-full " />
-                    </div>
-                    <div className="p-6">
-                        <label className="text-xl font-normal" htmlFor="">Average cost</label>
-                        <input type="text" placeholder="Type here" name="average_cost" className="input input-bordered w-full " />
-                    </div>
-                    <div className="p-6">
-                        <label className="text-xl font-normal" htmlFor="">Seasonality</label>
-                        <input type="text" placeholder="Type here" name="seasonality" className="input input-bordered w-full " />
-                    </div>
-                    <div className="p-6">
-                        <label className="text-xl font-normal" htmlFor="">Total Visitors Per Year</label>
-                        <input type="text" placeholder="Type here" name="totalVisitorsPerYear" className="input input-bordered w-full " />
-                    </div>
-                </div>
 
-                <button className="btn w-full ">Add Place</button>
+                    <button className="btn w-full ">Add Place</button>
 
-            </form>
+                </form>
+            </div>
         </div>
     );
 };
