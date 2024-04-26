@@ -1,6 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import '../App.css'
+import { useContext } from 'react';
+import { AuthContext } from './AuthProvider';
 const Navbar = () => {
+    const { user, logout} = useContext(AuthContext);
 
     const link = <>
         <li className='text-lg'> <NavLink to="/">Home</NavLink> </li>
@@ -9,7 +12,7 @@ const Navbar = () => {
         <li className='text-lg'> <NavLink to="/myList">My List</NavLink> </li>
     </>
     return (
-        <div className="container text-white">
+        <div className="container text-black">
             <nav className='mt-8 navbar pl-8 pr-8'>
                 <div className="navbar-start ">
                     <div className="dropdown">
@@ -29,7 +32,22 @@ const Navbar = () => {
 
                 </div>
                 <div className="navbar-end">
-                    <a href='/signin' className="btn">Signin</a>
+                {
+                    user ?
+                        <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img alt="profile" src={user?.photoURL ||"https://i.ibb.co/9N4MfJH/user.png"}/>
+                                </div>
+                            </div>
+                            <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                <li><a>{user.displayName}</a></li>
+                                <li><a>Settings</a></li>
+                                <li onClick={() => logout()}><a>Logout</a></li>
+                            </ul>
+                        </div> :
+                        <a href="/signin" className="btn bg-violet-500 text-white">Signin</a>
+                }
                 </div>
             </nav>
         </div>
