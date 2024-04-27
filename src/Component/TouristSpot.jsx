@@ -1,0 +1,37 @@
+import { useEffect, useState } from "react";
+const TouristSpot = () => {
+
+    const [items, setItems] = useState([]);
+    console.log(items)
+
+    useEffect(() => {
+        fetch('https://tourism-management-server.vercel.app/AddTouristSpot')
+            .then(res => res.json())
+            .then(data => setItems(data))
+    }, [])
+
+    return (
+        <div className="container mx-auto mt-8">
+            <h1>Most Popular
+                Destination! {items.length}</h1>
+            <div className="grid grid-cols-1 md:grid-cols-3">
+                {
+                    items.map(item => <div key={item._id}>
+                        <div className="max-w-sm rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+                            <img src="https://source.unsplash.com/random/300x300/?2" alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
+                            <div className="flex flex-col justify-between p-6 space-y-8">
+                                <div className="space-y-2">
+                                    <h2 className="text-3xl font-semibold tracking-wide">{item.tourists_spot_name}</h2>
+                                    <p className="dark:text-gray-800">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
+                                </div>
+                                <button type="button" className="btn flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button>
+                            </div>
+                        </div>
+                    </div>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default TouristSpot;
