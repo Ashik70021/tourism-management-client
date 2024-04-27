@@ -10,7 +10,7 @@ const SpotDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleSpot/${id}`)
+        fetch(`https://tourism-management-server.vercel.app/singleSpot/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSpot(data)
@@ -34,7 +34,7 @@ const SpotDetails = () => {
             country_Name, tourists_spot_name, location,
             short_description, average_cost, seasonality, totalVisitorsPerYear}
         
-        fetch(`http://localhost:5000/updateProduct/${id}`, {
+        fetch(`https://tourism-management-server.vercel.app/updateProduct/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

@@ -26,16 +26,16 @@
 }
 
 .slide1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../src/assets/images/banner\ 1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../public/images/banner\ 1.jpg");
 }
 
 .slide2 {
-  background-image: url("../src/assets/images/banner\ 2.webp");
+  background-image: url("../public/images/banner\ 2.webp");
 }
 
 .slide3 {
 
-  background-image: url("../src/assets/images/banner\ 3.webp");
+  background-image: url("../public/images/banner\ 3.webp");
 }
 
 

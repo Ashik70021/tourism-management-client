@@ -24,7 +24,7 @@ const AddTouristSpot = () => {
             short_description, average_cost, seasonality, totalVisitorsPerYear,
             user_Name, user_email
         }
-        fetch("http://localhost:5000/AddTouristSpot", {
+        fetch("https://tourism-management-server.vercel.app/AddTouristSpot", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

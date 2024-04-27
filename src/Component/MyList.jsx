@@ -10,7 +10,7 @@ const MyList = () => {
     const [control, setControl] = useState(false);
     console.log(user)
     useEffect(() => {
-        fetch(`http://localhost:5000/myList/${user.email}`)
+        fetch(`https://tourism-management-server.vercel.app/myList/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -21,7 +21,7 @@ const MyList = () => {
     // Delete operation
 
     const handleDelete = (id) =>{
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://tourism-management-server.vercel.app/delete/${id}`, {
             method: "DELETE",
         })
         .then(res => res.json())
