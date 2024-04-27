@@ -15,6 +15,7 @@ import MyList from './Component/MyList';
 import AuthProvider from './Component/AuthProvider';
 import Signin from './Component/Signin';
 import Signup from './Component/Signup';
+import SpotDetails from './Component/SpotDetails';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup></Signup>,
+      },
+      {
+        path: "/spots/:id",
+        element: <SpotDetails></SpotDetails>,
       },
     ]
   },

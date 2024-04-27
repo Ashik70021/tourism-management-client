@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthProvider";
+import { Link } from "react-router-dom";
 
 
 
 const MyList = () => {
     const { user } = useContext(AuthContext);
     const [item, setItem] = useState([]);
+    const [control, setControl] = useState(false);
     console.log(user)
     useEffect(() => {
         fetch(`http://localhost:5000/myList/${user.email}`)
@@ -14,7 +16,21 @@ const MyList = () => {
                 console.log(data)
                 setItem(data);
             });
-    }, [user])
+    }, [user,control]);
+
+    // Delete operation
+
+    const handleDelete = (id) =>{
+        fetch(`http://localhost:5000/delete/${id}`, {
+            method: "DELETE",
+        })
+        .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0){
+                    setControl(!control)
+                }
+            })
+    }
 
     return (
 
@@ -39,8 +55,8 @@ const MyList = () => {
                             <td>{p.tourists_spot_name}</td>
                             <td>{p.location}</td>
                             <td>
-                                <button className="m-2 btn">Update</button>
-                                <button className="m-2 btn">Delete</button>
+                                <Link to={`/spots/${p._id}`}><button className="m-2 btn">Update</button></Link>
+                                <button onClick={()=> handleDelete(p._id)} className="m-2 btn">Delete</button>
                             </td>
                         </tr>)
                     }
