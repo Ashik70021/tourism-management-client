@@ -16,6 +16,7 @@ const TouristSpot = () => {
             })
     }, [])
 
+
     return (
         <div className="container mx-auto mt-16">
             <h1 className="text-4xl font-bold text-center">Most Popular Destination!</h1>
@@ -33,7 +34,7 @@ const TouristSpot = () => {
                                     <h2 className="text-xl font-semibold tracking-wide">{item.country_Name}</h2>
                                     <p className="dark:text-gray-800">{item.short_description}</p>
                                 </div>
-                                <button type="button" className="btn flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button>
+                                <Link to={`/viewdetails/${item._id}`}><button type="button" className="btn flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button></Link>
                             </div>
                         </div>
                     </div>)
