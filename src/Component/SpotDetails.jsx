@@ -23,7 +23,7 @@ const SpotDetails = () => {
 
         const country_Name = e.target.country_Name.value;
         const tourists_spot_name = e.target.tourists_spot_name.value;
-        // const image = e.target.image.value;
+        const image = e.target.image.value;
         const location = e.target.location.value;
         const short_description = e.target.short_description.value;
         const average_cost = e.target.average_cost.value;
@@ -31,7 +31,7 @@ const SpotDetails = () => {
         const totalVisitorsPerYear = e.target.totalVisitorsPerYear.value;
 
         const info = {
-            country_Name, tourists_spot_name, location,
+            country_Name, tourists_spot_name, image, location,
             short_description, average_cost, seasonality, totalVisitorsPerYear}
         
         fetch(`https://tourism-management-server.vercel.app/updateProduct/${id}`, {
@@ -66,11 +66,11 @@ const SpotDetails = () => {
                             <input type="text" placeholder="Type here" name="tourists_spot_name" className="input input-bordered w-full " 
                             defaultValue={spot.tourists_spot_name}/>
                         </div>
-                        {/* <div className="p-6">
+                        <div className="p-6">
                             <label className="text-xl font-normal" htmlFor="">Image</label>
-                            <input type="text" placeholder="Use image URL" name="tourists_spot_name" className="input input-bordered w-full " 
-                            defaultValue={spot.tourists_spot_name}/>
-                        </div> */}
+                            <input type="text" placeholder="Use image URL" name="image" className="input input-bordered w-full " 
+                            defaultValue={spot.image}/>
+                        </div>
                         <div className="p-6">
                             <label className="text-xl font-normal" htmlFor="">Location</label>
                             <input type="text" placeholder="Type here" name="location" className="input input-bordered w-full " 
