@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 
 const Banner = () => {
     return (
-        <div className='mt-32'>
+        <div className='mt-16'>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide><div className="slide slide1">
                     <h1 className='text-block'>Your Home Awaits <br /> Let's Find It Together</h1>

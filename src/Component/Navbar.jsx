@@ -12,7 +12,7 @@ const Navbar = () => {
         <li className='text-lg'> <NavLink to="/myList">My List</NavLink> </li>
     </>
     return (
-        <div className=" text-black">
+        <div className=" text-black relative z-10">
             <nav className='mt-8 navbar pl-8 pr-8'>
                 <div className="navbar-start ">
                     <div className="dropdown">
