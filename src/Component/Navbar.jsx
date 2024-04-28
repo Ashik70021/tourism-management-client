@@ -6,13 +6,13 @@ const Navbar = () => {
     const { user, logout} = useContext(AuthContext);
 
     const link = <>
-        <li className='text-lg'> <NavLink to="/">Home</NavLink> </li>
-        <li className='text-lg'> <NavLink to="/allTouristSpot">All Tourists Spot</NavLink> </li>
-        <li className='text-lg'> <NavLink to="/AddTouristSpot">Add Tourists Spot</NavLink> </li>
-        <li className='text-lg'> <NavLink to="/myList">My List</NavLink> </li>
+        <li className='text-xl'> <NavLink to="/">Home</NavLink> </li>
+        <li className='text-xl'> <NavLink to="/allTouristSpot">All Tourists Spot</NavLink> </li>
+        <li className='text-xl'> <NavLink to="/AddTouristSpot">Add Tourists Spot</NavLink> </li>
+        <li className='text-xl'> <NavLink to="/myList">My List</NavLink> </li>
     </>
     return (
-        <div className=" text-black bg-amber-200 relative z-10">
+        <div className=" text-black bg-[#90D26D] relative z-10">
             <nav className=' navbar pl-8 pr-8'>
                 <div className="navbar-start ">
                     <div className="dropdown">

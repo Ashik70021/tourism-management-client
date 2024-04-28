@@ -35,11 +35,11 @@ const MyList = () => {
     return (
 
         <div className="overflow-x-auto container mx-auto">
-            <table className="table mt-32">
+            <table className="table mt-32 border">
 
-                <thead className="bg-[#9b9999]">
+                <thead className="bg-[#90D26D] text-xl">
                     <tr>
-                        <th></th>
+                        <th>SI</th>
                         <th>Country Name</th>
                         <th>Spot Name</th>
                         <th>Location</th>
@@ -47,7 +47,7 @@ const MyList = () => {
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="text-lg">
                     {
                         item.map(p => <tr key={p._id}>
                             <th></th>
@@ -55,8 +55,8 @@ const MyList = () => {
                             <td>{p.tourists_spot_name}</td>
                             <td>{p.location}</td>
                             <td>
-                                <Link to={`/spots/${p._id}`}><button className="m-2 btn">Update</button></Link>
-                                <button onClick={()=> handleDelete(p._id)} className="m-2 btn">Delete</button>
+                                <Link to={`/spots/${p._id}`}><button className="m-2 btn bg-[#90D26D]">Update</button></Link>
+                                <button onClick={()=> handleDelete(p._id)} className="m-2 btn bg-[#90D26D]">Delete</button>
                             </td>
                         </tr>)
                     }

@@ -27,7 +27,7 @@ const AllTouristSpot = () => {
                                     <h2 className="text-xl font-semibold tracking-wide">{item.country_Name}</h2>
                                     <p className="dark:text-gray-800">{item.short_description}</p>
                                 </div>
-                                <Link to={`/viewdetails/${item._id}`}><button type="button" className="btn flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button></Link>
+                                <Link to={`/viewdetails/${item._id}`}><button type="button" className="btn bg-[#90D26D] border-none text-lg flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button></Link>
                             </div>
                         </div>
                     </div>)

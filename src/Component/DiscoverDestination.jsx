@@ -14,7 +14,7 @@ const DiscoverDestination = () => {
 				<div className="mt-12 space-y-12">
 					<div className="flex">
 						<div className="flex-shrink-0">
-							<div className="flex items-center justify-center w-12 h-12 rounded-md bg-red-600 text-gray-50">
+							<div className="flex items-center justify-center w-12 h-12 rounded-md bg-[#90D26D] text-gray-50">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
 								</svg>
@@ -27,7 +27,7 @@ const DiscoverDestination = () => {
 					</div>
 					<div className="flex">
 						<div className="flex-shrink-0">
-							<div className="flex items-center justify-center w-12 h-12 rounded-md bg-red-600 text-gray-50">
+							<div className="flex items-center justify-center w-12 h-12 rounded-md bg-[#90D26D] text-gray-50">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
 								</svg>
@@ -40,7 +40,7 @@ const DiscoverDestination = () => {
 					</div>
 					<div className="flex">
 						<div className="flex-shrink-0">
-							<div className="flex items-center justify-center w-12 h-12 rounded-md bg-red-600 text-gray-50">
+							<div className="flex items-center justify-center w-12 h-12 rounded-md bg-[#90D26D] text-gray-50">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
 								</svg>

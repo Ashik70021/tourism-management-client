@@ -20,13 +20,13 @@ const TouristSpot = () => {
     return (
         <div className="container mx-auto mt-16">
             <h1 className="text-4xl font-bold text-center">Most Popular Destination!</h1>
-            <div className="mt-16 flex justify-end mr-8 md:mr-28">
+            <div className="text-lg md:text-xl mt-16 flex justify-end mr-8 md:mr-32">
                 <Link to='/allTouristSpot'><p>View All</p></Link>
             </div>
-            <div className=" grid grid-cols-1 md:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-3">
                 {
                     items.map(item => <div key={item._id}>
-                        <div className="m-4 max-w-sm rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+                        <div className="m-4 border-solid border-2 border-[#90D26D] max-w-sm rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
                             <img src={item.image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                             <div className="flex flex-col justify-between p-6 space-y-8">
                                 <div className="space-y-2">
@@ -34,7 +34,7 @@ const TouristSpot = () => {
                                     <h2 className="text-xl font-semibold tracking-wide">{item.country_Name}</h2>
                                     <p className="dark:text-gray-800">{item.short_description}</p>
                                 </div>
-                                <Link to={`/viewdetails/${item._id}`}><button type="button" className="btn flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button></Link>
+                                <Link to={`/viewdetails/${item._id}`}><button type="button" className="btn bg-[#90D26D] border-none flex text-lg items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button></Link>
                             </div>
                         </div>
                     </div>)

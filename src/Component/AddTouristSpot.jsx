@@ -42,10 +42,10 @@ const AddTouristSpot = () => {
 
     }
     return (
-        <div className="container mx-auto">
-            <div className="">
+        <div className="container mx-auto ">
+            <div className="mt-24">
                 <h1 className="text-center text-4xl font-bold"> Add Tourist Spot</h1>
-                <form className="mt-32" onSubmit={handleAddSpot}>
+                <form className="mt-4" onSubmit={handleAddSpot}>
                     <div className="grid grid-cols-1 md:grid-cols-2 p-4">
                         <div className="p-6">
                             <label className="text-xl font-normal" htmlFor="">Country Name</label>
@@ -80,9 +80,8 @@ const AddTouristSpot = () => {
                             <input type="text" placeholder="Type here" name="totalVisitorsPerYear" className="input input-bordered w-full " />
                         </div>
                     </div>
-
-                    <button className="btn w-full ">Add Place</button>
-
+                    <button className="btn border-none bg-[#90D26D] w-full ">Add Place</button>
+   
                 </form>
             </div>
         </div>
