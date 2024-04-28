@@ -1,20 +1,36 @@
-import '../App.css'
+
+import { useEffect, useState } from "react";
+
 const AllTouristSpot = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        fetch("https://tourism-management-server.vercel.app/AddTouristSpot")
+            .then(res => res.json())
+            .then(data => {
+                setItems(data)
+            })
+
+    })
     return (
-        <div>
-            <section>
-                <div className=" allspotbg ">
-                    <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-50">
-                        <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl dark:text-gray-50">Provident blanditiis cum exercitationem</h1>
-                        <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
-                        <div className="flex flex-wrap justify-center">
-                            <button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-100 dark:text-gray-900">Get started</button>
-                            <button type="button" className="px-8 py-3 m-2 text-lg border rounded dark:border-gray-300 dark:text-gray-50">Learn more</button>
+        <div className="container mx-auto mt-16">
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
+                {
+                    items.map(item => <div key={item._id}>
+                        <div className="m-4 max-w-sm rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+                            <img src={item.image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
+                            <div className="flex flex-col justify-between p-6 space-y-8">
+                                <div className="space-y-2">
+                                    <h2 className="text-3xl font-semibold tracking-wide">{item.tourists_spot_name}</h2>
+                                    <h2 className="text-xl font-semibold tracking-wide">{item.country_Name}</h2>
+                                    <p className="dark:text-gray-800">{item.short_description}</p>
+                                </div>
+                                <button type="button" className="btn flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                {/* <img src="https://source.unsplash.com/random/480x320" alt="" className="w-5/6 mx-auto mb-12 -mt-20 dark:bg-gray-500 rounded-lg shadow-md lg:-mt-40" /> */}
-            </section>
+                    </div>)
+                }
+            </div>
         </div>
     );
 };

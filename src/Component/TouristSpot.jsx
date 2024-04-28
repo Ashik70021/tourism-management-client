@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 const TouristSpot = () => {
 
     const [items, setItems] = useState([]);
@@ -9,7 +10,7 @@ const TouristSpot = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.length > 6) {
-                    data = data.slice(0,6);
+                    data = data.slice(0, 6);
                 }
                 setItems(data);
             })
@@ -18,7 +19,10 @@ const TouristSpot = () => {
     return (
         <div className="container mx-auto mt-16">
             <h1 className="text-4xl font-bold text-center">Most Popular Destination!</h1>
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
+            <div className="mt-16 flex justify-end mr-8 md:mr-28">
+                <Link to='/allTouristSpot'><p>View All</p></Link>
+            </div>
+            <div className=" grid grid-cols-1 md:grid-cols-3">
                 {
                     items.map(item => <div key={item._id}>
                         <div className="m-4 max-w-sm rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
