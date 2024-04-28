@@ -15,6 +15,7 @@ const AllTouristSpot = () => {
     })
     return (
         <div className="container mx-auto mt-16">
+            <button className="btn">Sort</button>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
                 {
                     items.map(item => <div key={item._id}>

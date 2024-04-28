@@ -17,6 +17,7 @@ import Signin from './Component/Signin';
 import Signup from './Component/Signup';
 import SpotDetails from './Component/SpotDetails';
 import ViewDetails from './Component/ViewDetails';
+import ProtectedRoute from './Component/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
@@ -33,11 +34,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/AddTouristSpot",
-        element: <AddTouristSpot></AddTouristSpot>,
+        element: <ProtectedRoute>
+          <AddTouristSpot></AddTouristSpot>,
+        </ProtectedRoute>
       },
       {
         path: "/myList",
-        element: <MyList></MyList>,
+        element: <ProtectedRoute>
+          <MyList></MyList>
+        </ProtectedRoute>,
       },
       {
         path: "/signin",
@@ -49,11 +54,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/spots/:id",
-        element: <SpotDetails></SpotDetails>,
+        element: <ProtectedRoute>
+          <SpotDetails></SpotDetails>,
+        </ProtectedRoute>
       },
       {
         path: "/viewdetails/:id",
-        element: <ViewDetails></ViewDetails>,
+        element: <ProtectedRoute>
+          <ViewDetails></ViewDetails>
+        </ProtectedRoute>,
         loader: () => fetch("https://tourism-management-server.vercel.app/AddTouristSpot")
       },
     ]
