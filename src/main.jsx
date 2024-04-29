@@ -19,6 +19,8 @@ import SpotDetails from './Component/SpotDetails';
 import ViewDetails from './Component/ViewDetails';
 import ProtectedRoute from './Component/ProtectedRoute';
 import Error from './Component/Error';
+import Countries from './Component/Countries';
+import CountryDetails from './Component/CountryDetails';
 
 const router = createBrowserRouter([
   {
@@ -66,6 +68,10 @@ const router = createBrowserRouter([
           <ViewDetails></ViewDetails>
         </ProtectedRoute>,
         loader: () => fetch("https://tourism-management-server.vercel.app/AddTouristSpot")
+      },
+      {
+        path: "/countrydetails",
+        element: <CountryDetails></CountryDetails>,
       },
     ]
   },
