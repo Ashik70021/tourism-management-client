@@ -6,13 +6,14 @@ const ViewDetails = () => {
     const {loading } = useContext(AuthContext);
     const items = useLoaderData();
     const {id} = useParams();
+    console.log(id);
     const item = items.find(item => item._id === id)
-    console.log(item)
+    // console.log(item)
     
     if(loading){
         return <span className="loading loading-spinner loading-lg"></span>
     }
-
+    
     return (
         <div>
             <section className="dark:bg-gray-100 dark:text-gray-800">
