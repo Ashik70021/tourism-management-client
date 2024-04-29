@@ -18,13 +18,14 @@ const TouristSpot = () => {
 
 
     return (
-        <div className="container mx-auto mt-16">
-            <h1 className="text-4xl font-bold text-center">Most Popular Destination!</h1>
+        <div className="container mx-auto mt-24">
+            <h1 className=" text-6xl font-bold text-center mb-8">Most Popular Destination!</h1>
+            <p className="text-2xl text-center">Experience the World's Most Popular Destinations: Explore Iconic Culture, History, and Adventure in These Must-Visit Locations!</p>
             
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
                 {
                     items.map(item => <div key={item._id}>
-                        <div className="m-4 border-solid border-2 border-[#90D26D] max-w-sm rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+                        <div className="hover:-translate-y-5 duration-700 relative m-4 border-solid border-2 border-[#90D26D] max-w-sm rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
                             <img src={item.image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                             <div className="flex flex-col justify-between p-6 space-y-8">
                                 <div className="space-y-2">

@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddTouristSpot = () => {
 
@@ -34,7 +36,7 @@ const AddTouristSpot = () => {
             .then(res => res.json())
             .then(data => {
                 if (data?.insertedId) {
-                    alert("Place added successfully")
+                    toast("Place added successfully") 
                 }
             }
 
@@ -84,6 +86,7 @@ const AddTouristSpot = () => {
    
                 </form>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

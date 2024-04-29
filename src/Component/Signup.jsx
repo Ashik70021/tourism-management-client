@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { AuthContext } from "./AuthProvider";
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
 
@@ -17,22 +18,22 @@ const Signup = () => {
     const onSubmit = (data) => {
         const { email, password, name, photoURL } = data;
         if (password.length < 6) {
-            alert("Password must be 6 character or longer")
+            toast.error("Password must be 6 character or longer")
             return;
         }
         if (!/^(?=.*[A-Z]).+$/.test(password)) {
-            alert("Must have an Uppercase letter in the password");
+            toast.error("Must have an Uppercase letter in the password");
             return;
         }
         if (!/^(?=.*[a-z]).+$/.test(password)) {
-            alert("Must have a Lowercase letter in the password");
+            toast.error("Must have a Lowercase letter in the password");
             return;
         }
 
         registerUser(email, password)
             .then(() => {
                 updateUserProfile(name, photoURL)
-                alert("Successfully Register");
+                toast("Successfully Register");
             })
             
     }
@@ -101,6 +102,7 @@ const Signup = () => {
             <p className="text-lg text-center sm:px-6 dark:text-gray-600">Already have an account?
                 <a rel="" href="/signin" className="underline text-gray-800"> Signin</a>
             </p>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

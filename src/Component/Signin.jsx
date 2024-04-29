@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useLocation, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { LuEye, LuEyeOff } from "react-icons/lu";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
 
 const Signin = () => {
 
@@ -22,10 +24,10 @@ const Signin = () => {
         loginUser(email, password)
             .then(result => {
                 console.log(result.user)
-                alert("Successfully login")
+                toast("Successfully login")
             })
             .catch((error) => {
-                alert("Invalid email or Password")
+                toast.error("Invalid email or Password")
             })
             
     }
@@ -88,6 +90,8 @@ const Signin = () => {
             <p className="text-lg text-center sm:px-6 dark:text-gray-600"> Dont have an account?
                 <a rel="/signup" href="/signup" className="underline dark:text-gray-800 text-gray-800"> Sign up</a>
             </p>
+
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
