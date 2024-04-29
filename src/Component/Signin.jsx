@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 
@@ -27,10 +27,11 @@ const Signin = () => {
             .catch((error) => {
                 alert("Invalid email or Password")
             })
+            
     }
     useEffect(() => {
         if (user) {
-            navigate(location.state)
+            navigate(location.state);
         }
     }, [user])
 
@@ -65,7 +66,7 @@ const Signin = () => {
                         <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                     </div>
                 </div>
-                <button className="block w-full p-3 text-center rounded-s border bg-violet-500 text-white">Sign in</button>
+                <button className="block w-full p-3 text-center rounded-s border bg-[#90D26D] text-white">Sign in</button>
             </form>
             <div className="flex items-center pt-4 space-x-1">
                 <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
@@ -85,7 +86,7 @@ const Signin = () => {
                 </button>
             </div>
             <p className="text-lg text-center sm:px-6 dark:text-gray-600"> Dont have an account?
-                <a rel="/signup" href="/signup" className="underline dark:text-gray-800 text-violet-500"> Sign up</a>
+                <a rel="/signup" href="/signup" className="underline dark:text-gray-800 text-gray-800"> Sign up</a>
             </p>
         </div>
     );

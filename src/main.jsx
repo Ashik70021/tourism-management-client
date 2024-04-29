@@ -18,11 +18,13 @@ import Signup from './Component/Signup';
 import SpotDetails from './Component/SpotDetails';
 import ViewDetails from './Component/ViewDetails';
 import ProtectedRoute from './Component/ProtectedRoute';
+import Error from './Component/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",

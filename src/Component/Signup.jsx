@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { AuthContext } from "./AuthProvider";
 
+
 const Signup = () => {
 
-    const { registerUser, updateUserProfile } = useContext(AuthContext);
+    const {user, registerUser, updateUserProfile } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
-    
 
     const {
         register,
@@ -34,7 +34,13 @@ const Signup = () => {
                 updateUserProfile(name, photoURL)
                 alert("Successfully Register");
             })
+            
     }
+    // useEffect(() => {
+    //     if (user) {
+    //         navigate(location.state);
+    //     }
+    // }, [user])
 
     return (
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl border mx-auto mt-16">
@@ -73,7 +79,7 @@ const Signup = () => {
                     {errors.password && <span className="text-red-500" >This field is required</span>}
                 </div>
 
-                <button className="block w-full p-3 text-center rounded-s border bg-violet-500 text-white">Sign up</button>
+                <button className="block w-full p-3 text-center rounded-s border bg-[#90D26D] text-white">Sign up</button>
             </form>
             <div className="flex items-center pt-4 space-x-1">
                 <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
@@ -93,7 +99,7 @@ const Signup = () => {
                 </button>
             </div>
             <p className="text-lg text-center sm:px-6 dark:text-gray-600">Already have an account?
-                <a rel="/login" href="/login" className="underline text-violet-500"> Login</a>
+                <a rel="" href="/signin" className="underline text-gray-800"> Signin</a>
             </p>
         </div>
     );
