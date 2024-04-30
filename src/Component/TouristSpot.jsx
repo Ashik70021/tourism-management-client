@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import { Zoom } from "react-awesome-reveal";
 const TouristSpot = () => {
     const { loading } = useContext(AuthContext)
     const [items, setItems] = useState([]);
@@ -27,6 +28,7 @@ const TouristSpot = () => {
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
                 {
                     items.map(item => <div key={item._id} className="mx-auto">
+                        <Zoom> 
                         <div className="hover:-translate-y-5 duration-700 relative m-4 border-solid border-2 border-[#90D26D] max-w-sm rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
                             <img src={item.image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                             <div className="flex flex-col justify-between p-6 space-y-8">
@@ -38,11 +40,12 @@ const TouristSpot = () => {
                                 <Link to={`/viewdetails/${item._id}`}><button type="button" className="btn bg-[#90D26D] border-none flex text-lg items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md text-gray-900">View Details</button></Link>
                             </div>
                         </div>
+                        </Zoom>
                     </div>)
                 }
             </div>
             <div className="text-lg md:text-2xl flex justify-end mr-8 md:mr-16">
-                <Link to='/allTouristSpot'><p className="underline  dark:text-gray-800">View All ></p></Link>
+                <Link to='/allTouristSpot'><p className="underline  dark:text-gray-800">View All</p></Link>
             </div>
         </div>
     );

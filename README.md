@@ -10,3 +10,8 @@
 - **Country :** User can Search country based tourist spot.
 - **User :** User can Login and Register with their profile and Login with their Social account.
 - **Categories :** Southeast Asia.
+
+## package
+
+- React Awesome reveal
+- React-simple-typewriter

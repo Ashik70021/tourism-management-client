@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 const AllTouristSpot = () => {
@@ -29,6 +30,7 @@ const AllTouristSpot = () => {
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
                 {
                     items.map(item => <div className="mx-auto" key={item._id}>
+                        <Zoom>
                         <div className="m-4  hover:-translate-y-5 duration-700 max-w-sm rounded-md border-solid border-2 border-[#90D26D] dark:bg-gray-50 dark:text-gray-800">
                             <img src={item.image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                             <div className="flex flex-col justify-between p-6 space-y-8">
@@ -41,6 +43,7 @@ const AllTouristSpot = () => {
                                 <Link to={`/viewdetails/${item._id}`}><button type="button" className="btn bg-[#90D26D] text-gray-900 border-none text-lg flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button></Link>
                             </div>
                         </div>
+                        </Zoom>
                     </div>)
                 }
             </div>
