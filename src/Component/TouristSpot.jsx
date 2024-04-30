@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 const TouristSpot = () => {
-
+    const { loading } = useContext(AuthContext)
     const [items, setItems] = useState([]);
     console.log(items)
 
@@ -9,6 +10,7 @@ const TouristSpot = () => {
         fetch('https://tourism-management-server.vercel.app/AddTouristSpot')
             .then(res => res.json())
             .then(data => {
+   
                 if (data.length > 6) {
                     data = data.slice(0, 6);
                 }

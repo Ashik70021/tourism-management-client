@@ -34,7 +34,7 @@ const MyList = () => {
 
     return (
 
-        <div className="overflow-x-auto container mx-auto">
+        <div className="overflow container mx-auto">
             <table className="table mt-32 border">
 
                 <thead className="bg-[#90D26D] text-xl">
@@ -49,8 +49,8 @@ const MyList = () => {
                 </thead>
                 <tbody className="text-lg">
                     {
-                        item.map(p => <tr key={p._id}>
-                            <th></th>
+                        item.map((p, index) => <tr key={p._id}>
+                            <th>{index + 1}</th>
                             <td>{p.country_Name}</td>
                             <td>{p.tourists_spot_name}</td>
                             <td>{p.location}</td>
