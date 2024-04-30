@@ -40,6 +40,9 @@ const AddTouristSpot = () => {
             .then(data => {
                 if (data?.insertedId) {
                     toast("Place added successfully")
+                    setSelectedCountry('');
+                    setselectedSeasonality('');
+                    e.target.reset();
                 }
             }
 

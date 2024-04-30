@@ -33,7 +33,7 @@ const SpotDetails = () => {
 
         const info = {
             country_Name, tourists_spot_name, image, location,
-            short_description, average_cost, seasonality, totalVisitorsPerYear}
+            short_description, average_cost, seasonality, totalVisitorsPerYear }
         
         fetch(`https://tourism-management-server.vercel.app/updateProduct/${id}`, {
             method: "PUT",
@@ -47,6 +47,10 @@ const SpotDetails = () => {
             console.log(data)
             if(data.modifiedCount > 0){
                 toast("update successfully")
+                
+                setSelectedCountry('');
+                setselectedSeasonality('');
+                e.target.reset();
             }
         })
     }

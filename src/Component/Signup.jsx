@@ -44,31 +44,31 @@ const Signup = () => {
     // }, [user])
 
     return (
-        <div className="w-full max-w-md p-8 space-y-3 rounded-xl border mx-auto mt-16">
+        <div className="w-full max-w-md p-8 space-y-3 rounded-xl border-solid border-2 border-[#90D26D] mx-auto mt-16">
             <h1 className="text-2xl font-bold text-center">Register</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-1 text-sm">
                     <label htmlFor="username" className="block dark:text-gray-600">Name</label>
-                    <input type="text" name="name" id="username" placeholder="Your name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
+                    <input type="text" name="name" id="username" placeholder="Your name" className="w-full px-4 py-3 rounded-md caret-[#90D26D] border-[#90D26D] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
                         {...register("name")}
                     />
                 </div>
                 <div className="space-y-1 text-sm">
                     <label htmlFor="email" className="block dark:text-gray-600">Email</label>
-                    <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
+                    <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md caret-[#90D26D] border-[#90D26D] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
                         {...register("email", { required: true })}
                     />
                     {errors.email && <span className="text-red-500">This field is required</span>}
                 </div>
                 <div className="space-y-1 text-sm">
                     <label htmlFor="Photo URL" className="block dark:text-gray-600">Photo URL</label>
-                    <input type="Photo URL" name="PhotoURL" id="Photo URL" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
+                    <input type="Photo URL" name="PhotoURL" id="Photo URL" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md caret-[#90D26D] border-[#90D26D] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
                         {...register("photoURL")} />
                 </div>
 
                 <div className="space-y-1 text-sm relative">
                     <label htmlFor="password" className="block dark:text-gray-600">Password</label>
-                    <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
+                    <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md caret-[#90D26D] border-[#90D26D] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
                         {...register("password", { required: true })}
                     />
                     <span className="absolute top-8 right-2 text-xl"
@@ -80,7 +80,7 @@ const Signup = () => {
                     {errors.password && <span className="text-red-500" >This field is required</span>}
                 </div>
 
-                <button className="block w-full p-3 text-center rounded-s border bg-[#90D26D] text-white">Sign up</button>
+                <button className="block w-full p-3 text-center text-xl rounded-s border-solid border-2 border-[#90D26D] bg-[#90D26D] text-gray-900">Sign up</button>
             </form>
             <div className="flex items-center pt-4 space-x-1">
                 <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>

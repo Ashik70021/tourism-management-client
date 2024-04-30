@@ -50,8 +50,8 @@ const DiscoverDestination = () => {
 						</div>
 					</div>
 					<div aria-hidden="true" className="mt-10 lg:mt-0">
-						<img src="../../public/images/discover.png" alt="" className="mx-auto" />
-					</div>
+                            <img src="../../public/images/discover.png" alt="" className="mx-auto rounded-lg dark:bg-gray-500" />
+                        </div>
 				</div>
 			</div>
 		</section>

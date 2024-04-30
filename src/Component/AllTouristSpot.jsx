@@ -28,7 +28,7 @@ const AllTouristSpot = () => {
             </div>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
                 {
-                    items.map(item => <div key={item._id}>
+                    items.map(item => <div className="mx-auto" key={item._id}>
                         <div className="m-4  hover:-translate-y-5 duration-700 max-w-sm rounded-md border-solid border-2 border-[#90D26D] dark:bg-gray-50 dark:text-gray-800">
                             <img src={item.image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                             <div className="flex flex-col justify-between p-6 space-y-8">
