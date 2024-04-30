@@ -12,12 +12,20 @@ const AllTouristSpot = () => {
                 setItems(data)
             })
 
-    })
+    },[])
+
+    const handleSortByAverageCost = () => {
+        const sortedItems = [...items].sort((a, b) => parseFloat(a.average_cost) - parseFloat(b.average_cost));
+        setItems(sortedItems);
+    };
+
     return (
         <div className="container mx-auto mt-16">
             <h1 className=" text-6xl font-bold text-center mb-8">Embark Your Exploring Today</h1>
             <p className="text-2xl text-center">Explore Breathtaking Destinations and Create Unforgettable Memories with Our Ultimate Tourism Guide Today.</p>
-            <button type="button" className=" px-8 py-3 font-semibold rounded-full bg-gray-800 text-gray-100">Short by</button>
+            <div className="flex justify-center mb-8 mt-16">
+                <button type="button" onClick={handleSortByAverageCost} className="px-8 py-3 text-xl font-semibold border rounded border-gray-800 bg-[#90D26D] text-gray-800">Sort by Average Cost</button>
+            </div>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
                 {
                     items.map(item => <div key={item._id}>
@@ -27,6 +35,7 @@ const AllTouristSpot = () => {
                                 <div className="space-y-2">
                                     <h2 className="text-3xl font-semibold tracking-wide">{item.tourists_spot_name}</h2>
                                     <h2 className="text-xl font-semibold tracking-wide">{item.country_Name}</h2>
+                                    <h2 className="text-lg font-semibold tracking-wide">Average Cost: {item.average_cost}</h2>
                                     <p className="dark:text-gray-800">{item.short_description}</p>
                                 </div>
                                 <Link to={`/viewdetails/${item._id}`}><button type="button" className="btn bg-[#90D26D] border-none text-lg flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-red-600 dark:text-gray-50">View Details</button></Link>
