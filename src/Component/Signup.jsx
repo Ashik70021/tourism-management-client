@@ -4,11 +4,13 @@ import { LuEye, LuEyeOff } from "react-icons/lu";
 import { AuthContext } from "./AuthProvider";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate} from "react-router-dom";
 
 const Signup = () => {
 
     const {user, registerUser, updateUserProfile } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate()
 
     const {
         register,
@@ -37,11 +39,14 @@ const Signup = () => {
             })
             
     }
-    // useEffect(() => {
-    //     if (user) {
-    //         navigate(location.state);
-    //     }
-    // }, [user])
+
+    useEffect(() => {
+        if (user) {
+            navigate(location.state);
+            window.location.reload();
+        }
+    }, [user, navigate]);
+ 
 
     return (
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl border-solid border-2 border-[#90D26D] mx-auto mt-16">

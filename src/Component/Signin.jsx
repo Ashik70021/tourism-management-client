@@ -35,7 +35,8 @@ const Signin = () => {
         if (user) {
             navigate(location.state);
         }
-    }, [user])
+        
+    }, [user, navigate])
 
 
 

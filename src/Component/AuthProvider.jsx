@@ -1,6 +1,7 @@
 import { GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
+import { DiVim } from "react-icons/di";
 
 
 export const AuthContext = createContext(null);
@@ -8,8 +9,9 @@ const GoogleProvider = new GoogleAuthProvider();
 const GithubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({children}) => {
+
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(null);
+    const [loading, setLoading] = useState(false);
 
         // Create User
         const registerUser = (email, password) => {
@@ -75,9 +77,10 @@ const AuthProvider = ({children}) => {
         githubUser,
         logout,
         loading,
+        setLoading,
     }
     return (
-            <AuthContext.Provider value={authInfo}>
+            <AuthContext.Provider value={authInfo}>           
                 {children}
             </AuthContext.Provider>  
     );
