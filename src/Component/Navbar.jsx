@@ -24,10 +24,10 @@ const Navbar = () => {
     }, [theme]);
 
     const link = <>
-        <li className='text-xl text-[#90D26D] '> <NavLink to="/">Home</NavLink> </li>
-        <li className='text-xl text-[#90D26D]'> <NavLink to="/allTouristSpot">All Tourists Spot</NavLink> </li>
-        <li className='text-xl text-[#90D26D]'> <NavLink to="/AddTouristSpot">Add Tourists Spot</NavLink> </li>
-        <li className='text-xl text-[#90D26D]'> <NavLink to="/myList">My List</NavLink> </li>
+        <li className='text-xl '> <NavLink to="/">Home</NavLink> </li>
+        <li className='text-xl '> <NavLink to="/allTouristSpot">All Tourists Spot</NavLink> </li>
+        <li className='text-xl '> <NavLink to="/AddTouristSpot">Add Tourists Spot</NavLink> </li>
+        <li className='text-xl '> <NavLink to="/myList">My List</NavLink> </li>
     </>
     return (
         <div className=" text-black bg-[#90D26D] relative z-10">
