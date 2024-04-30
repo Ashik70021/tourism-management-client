@@ -28,7 +28,7 @@ const AddTouristSpot = () => {
             short_description, average_cost, seasonality, totalVisitorsPerYear,
             user_Name, user_email
         }
-        
+
         fetch("https://tourism-management-server.vercel.app/AddTouristSpot", {
             method: "POST",
             headers: {
@@ -59,16 +59,16 @@ const AddTouristSpot = () => {
                 <h1 className="text-center text-4xl font-bold"> Add Tourist Spot</h1>
                 <form className="mt-4" onSubmit={handleAddSpot}>
                     <div className="grid grid-cols-1 md:grid-cols-2 p-4">
-                    <div className="p-6">
+                        <div className="p-6">
                             <label className="text-xl font-normal" htmlFor="country">Country Name</label>
                             <select id="country" value={selectedCountry} onChange={handleCountryChange} className="input input-bordered border-[#90D26D] w-full" required>
                                 <option value="">Select a country</option>
                                 <option value="Bangladesh">Bangladesh</option>
-                                <option value="Vietnam">Thailand</option>
-                                <option value="Malaysia">Indonesia</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Indonesia">Indonesia</option>
                                 <option value="Malaysia">Malaysia</option>
-                                <option value="Malaysia">Vietnam</option>
-                                <option value="Malaysia">Cambodia</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Cambodia">Cambodia</option>
                             </select>
                         </div>
                         <div className="p-6">
@@ -93,11 +93,11 @@ const AddTouristSpot = () => {
                         </div>
                         <div className="p-6">
                             <label className="text-xl font-normal" htmlFor="">Seasonality</label>
-                            <select name="" id="Seasonality"  value={selectedSeasonality} onChange={handleSeasonalityChange} className="input input-bordered caret-[#90D26D] border-[#90D26D] w-full">
-                                 <option value="">Select Seasonality</option>
-                                 <option value="Spring">Spring</option>
-                                 <option value="Summer">Summer</option>
-                                 <option value="Winter">Winter</option>
+                            <select name="" id="Seasonality" value={selectedSeasonality} onChange={handleSeasonalityChange} className="input input-bordered caret-[#90D26D] border-[#90D26D] w-full">
+                                <option value="">Select Seasonality</option>
+                                <option value="Spring">Spring</option>
+                                <option value="Summer">Summer</option>
+                                <option value="Winter">Winter</option>
                             </select>
                         </div>
                         <div className="p-6">
@@ -105,8 +105,9 @@ const AddTouristSpot = () => {
                             <input type="text" placeholder="Type here" name="totalVisitorsPerYear" className="input input-bordered border-[#90D26D] w-full " />
                         </div>
                     </div>
-                    <button className="btn border-none bg-[#90D26D] w-full ">Add Place</button>
-
+                    <div className="w-2/4 mx-auto">
+                        <button className="btn border-none bg-[#90D26D] w-full text-xl text-gray-900 ">Add Place</button>
+                    </div>
                 </form>
             </div>
             <ToastContainer></ToastContainer>

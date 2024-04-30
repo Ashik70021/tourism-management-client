@@ -16,17 +16,17 @@ const MyList = () => {
                 console.log(data)
                 setItem(data);
             });
-    }, [user,control]);
+    }, [user, control]);
 
     // Delete operation
 
-    const handleDelete = (id) =>{
+    const handleDelete = (id) => {
         fetch(`https://tourism-management-server.vercel.app/delete/${id}`, {
             method: "DELETE",
         })
-        .then(res => res.json())
+            .then(res => res.json())
             .then(data => {
-                if(data.deletedCount > 0){
+                if (data.deletedCount > 0) {
                     setControl(!control)
                 }
             })
@@ -34,36 +34,41 @@ const MyList = () => {
 
     return (
 
-        <div className="overflow container mx-auto">
-            <table className="table mt-32 border">
-
-                <thead className="bg-[#90D26D] text-xl">
-                    <tr>
-                        <th>SI</th>
-                        <th>Country Name</th>
-                        <th>Spot Name</th>
-                        <th>Location</th>
-                        <th>ACTION</th>
-
+<div className="overflow container mx-auto">
+    <div className="table-responsive">
+        <table className="table mt-32 border">
+            <thead className="bg-[#90D26D] text-xl text-gray-900">
+                <tr>
+                    <th>SI</th>
+                    <th>COUNTRY NAME</th>
+                    <th>SPOT NAME</th>
+                    <th>SEASONALITY</th>
+                    <th>LOCATION</th>
+                    <th>AVERAGE COST</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody className="text-lg">
+                {item.map((p, index) => (
+                    <tr key={p._id}>
+                        <td>{index + 1}</td>
+                        <td>{p.country_Name}</td>
+                        <td>{p.tourists_spot_name}</td>
+                        <td>{p.seasonality}</td>
+                        <td>{p.location}</td>
+                        <td>{p.average_cost}</td>
+                        <td>
+                            <Link to={`/spots/${p._id}`}>
+                                <button className="m-2 btn  w-full md:w-1/4 bg-[#90D26D] text-gray-900 hover:text-gray-400">Update</button>
+                            </Link>
+                            <button onClick={() => handleDelete(p._id)} className="m-2 btn w-full md:w-1/4 bg-[#90D26D] text-gray-900 hover:text-gray-400">Delete</button>
+                        </td>
                     </tr>
-                </thead>
-                <tbody className="text-lg">
-                    {
-                        item.map((p, index) => <tr key={p._id}>
-                            <th>{index + 1}</th>
-                            <td>{p.country_Name}</td>
-                            <td>{p.tourists_spot_name}</td>
-                            <td>{p.location}</td>
-                            <td>
-                                <Link to={`/spots/${p._id}`}><button className="m-2 btn bg-[#90D26D]">Update</button></Link>
-                                <button onClick={()=> handleDelete(p._id)} className="m-2 btn bg-[#90D26D]">Delete</button>
-                            </td>
-                        </tr>)
-                    }
-
-                </tbody>
-            </table>
-        </div>
+                ))}
+            </tbody>
+        </table>
+    </div>
+</div>
 
     );
 };

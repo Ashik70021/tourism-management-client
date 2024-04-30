@@ -3,9 +3,10 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Typewriter } from 'react-simple-typewriter'
-const Banner = () => {
+import { Typewriter } from 'react-simple-typewriter';
 
+const Banner = () => {
+   
     return (
         <div className=''>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -29,6 +30,7 @@ const Banner = () => {
                             <div className='text-center mt-12'>
                                 <button type="button" className="mr-4 px-8 py-3 text-xl font-semibold rounded bg-[#90D26D] text-gray-100">Country</button>
                                 <button type="button" className="px-8 py-3 text-xl font-semibold border rounded border-[#90D26D] text-[#90D26D]">Discover</button>
+
                             </div>
                         </div>
 
@@ -80,6 +82,7 @@ const Banner = () => {
                                 <button type="button" className="mr-4 px-8 py-3 text-xl font-semibold rounded bg-[#90D26D] text-gray-100">Country</button>
                                 <button type="button" className="px-8 py-3 text-xl font-semibold border rounded border-[#90D26D] text-[#90D26D]">Discover</button>
                             </div>
+
                         </div>
 
                     </div>

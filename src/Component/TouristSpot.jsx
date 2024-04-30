@@ -21,8 +21,8 @@ const TouristSpot = () => {
 
     return (
         <div className="container mx-auto mt-24">
-            <h1 className=" text-6xl font-bold text-center mb-8">Most Popular Destination!</h1>
-            <p className="text-2xl text-center">Experience the World's Most Popular Destinations: Explore Iconic Culture, History, and Adventure in These Must-Visit Locations!</p>
+            <h1 className=" text-3xl md:text-6xl font-bold text-center mb-8">Most Popular Destination!</h1>
+            <p className="text-xl md:text-2xl text-center pr-4 pl-4">Experience the World's Most Popular Destinations: Explore Iconic Culture, History, and Adventure in These Must-Visit Locations!</p>
             
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
                 {
