@@ -11,6 +11,13 @@ const AddTouristSpot = () => {
     console.log(user)
     const handleAddSpot = e => {
         e.preventDefault();
+        const average_cost = parseInt(e.target.average_cost.value, 10);
+
+    if (isNaN(average_cost) || average_cost < 1000) {
+        toast.error("Average cost must be at least 1000.");
+        return;
+    }
+
         const user_Name = user.displayName;
         const user_email = user.email;
 
@@ -19,7 +26,6 @@ const AddTouristSpot = () => {
         const image = e.target.image.value;
         const location = e.target.location.value;
         const short_description = e.target.short_description.value;
-        const average_cost = e.target.average_cost.value;
         const seasonality = selectedSeasonality;
         const totalVisitorsPerYear = e.target.totalVisitorsPerYear.value;
 
